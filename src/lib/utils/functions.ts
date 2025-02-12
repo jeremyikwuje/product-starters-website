@@ -29,3 +29,7 @@ export function array_to_key_object(entries: any, property: string) {
 
 	return entries_obj;
 }
+
+export function capitalizeFirstWord(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

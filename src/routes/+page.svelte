@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { capitalizeFirstWord } from "$lib";
 	import { formatNumber } from "$lib/utils/money";
 
   export let data;
@@ -19,15 +20,21 @@
     <div class="p-5 bg-white rounded-xl shadow-sm border-3 border-gray-100">
       <div class="space-x-4">
         <div class="flex flex-col md:flex-row items-start md:items-center">
-          <img src="https://via.placeholder.com/40" alt="Profile" class="w-10 h-10 rounded-full mr-4 mb-4 md:mb-0">
+          {#if post.casestudy.business_owner_image}
+            <img src={post.casestudy.business_owner_image} alt="Profile" class="w-10 h-10 rounded-full mr-4 mb-4 md:mb-0">
+          {:else}
+            <span class="flex items-center w-10 h-10 rounded-full mr-4 mb-4 md:mb-0 bg-gray-200 flex-shrink-0 place-content-center">
+              <span class="text-gray-600 font-semibold text-sm">{post.casestudy.business_name.substring(0, 2).toUpperCase()}</span>
+            </span>
+          {/if}
           <h2 class="text-lg font-bold">{post.title}</h2>
         </div>
         <div>
           <p class="text-gray-600 mt-3">{post.excerpt}</p>
           <div class="flex flex-col items-start md:flex-row md:items-center space-x-3 mt-3">
-            <span class="inline-block mb-2">
+            <span class="inline-block mb-2 md:mb-0">
               <span class="text-black font-bold">${formatNumber(post.casestudy.revenue)}</span>
-              <span class="text-gray-500 font-semibold">{post.casestudy.revenue_interval} Revenue</span>
+              <span class="text-gray-500 font-semibold">{capitalizeFirstWord(post.casestudy.revenue_interval)} Revenue</span>
             </span>
             <span>
               <span class="text-black font-bold">${formatNumber(post.casestudy.startup_cost)}</span>
