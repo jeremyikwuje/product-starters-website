@@ -5,7 +5,7 @@ import { RequestMethod } from '$lib/constant';
 export function setApiUrl(endpoint: string) {
 	const server = env.SERVER;
 	let apiUrl = env.API_URL || '';
-	if (server?.toLowerCase() == 'local') {
+	if ('local' === server?.toLowerCase()) {
 		apiUrl = 'http://localhost:4003/core';
 	}
 
@@ -15,6 +15,8 @@ export function setApiUrl(endpoint: string) {
 export async function requestApi(endpoint: string, method: string = RequestMethod.GET, body = {}) {
 	const url = setApiUrl(endpoint);
 	
+	console.log(url);
+
 	let options: any = {
 		method: method.toUpperCase()
 	};
