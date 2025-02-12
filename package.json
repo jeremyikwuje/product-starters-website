@@ -44,6 +44,7 @@
 		"vitest": "^3.0.0"
 	},
 	"dependencies": {
-		"date-and-time": "^3.6.0"
+		"date-and-time": "^3.6.0",
+		"marked": "^15.0.7"
 	}
 }
