@@ -7,6 +7,18 @@
   const posts = data.posts;
 </script>
 
+<svelte:head>
+  <title>Product Starters – Case Studies of Founders Building & Earning</title>
+  <meta name="description" content="Discover stories of founders building products and making money. Get insights, lessons, and inspiration from real entrepreneurs on Product Starters.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Product Starters – Case Studies of Founders Building & Earning">
+  <meta property="og:description" content="Discover stories of founders building products and making money. Get insights, lessons, and inspiration from real entrepreneurs on Product Starters.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://productstarters.com/">
+  <meta property="og:image" content="https://productstarters.com/logo.jpg">
+</svelte:head>
+
 <div class="container">
   <div class="py-16">
     <h1 class="mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
