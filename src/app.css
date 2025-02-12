@@ -1,1 +1,71 @@
 @import 'tailwindcss';
+
+body {
+  @apply bg-white;
+}
+
+:focus, :hover {
+  outline: 0;
+  box-shadow: 0;
+}
+
+:focus-visible {
+  outline-offset: 0px;
+}
+
+input, select {
+  outline: none;
+  box-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus, input:hover, .select:focus, .select:hover {
+  outline: 0 !important;
+  outline-width: 0 !important;
+  box-shadow: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+button, span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a {
+  color: #07ba22;
+}
+
+
+@layer {
+  .bg-primary {
+    background: #07ba22 !important;
+    background-color: #07ba22 !important;
+  }
+  .border-primary {
+    border-color: #07ba22 !important;
+  }
+
+  .container {
+    @apply px-4 mx-auto w-full md:w-[1240px]; /* Adjust the max-width as needed */
+  }
+  .container-content {
+    @apply px-4 mx-auto w-full md:w-[1200px]; /* Adjust the max-width as needed */
+  }
+
+  .button {
+    @apply opacity-90 hover:opacity-100 focus:outline-none focus:ring-0 font-medium rounded-sm inline-block;
+    cursor: pointer;
+  }
+
+  .tag-primary {
+    @apply bg-orange-400 text-gray-50 text-xs font-medium px-2 py-1 rounded-full;
+  }
+}
