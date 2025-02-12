@@ -3,16 +3,16 @@ import { requestApi } from "$lib/utils/utilities";
 
 export const getPosts = async (type: PostType) => {
   const url = `/posts/get_posts?post_type=${type}&visibility=${PostVisibilty.public}&is_published=false`;
-  const request_picks = await requestApi(url);
-  const posts = request_picks.data;
+  const requestPosts = await requestApi(url);
+  const posts = requestPosts.data;
 
   return posts;
 }
 
 export const getPost = async (postUnique: string) => {
   const url = `/posts/get_post?post_unique=${postUnique}`;
-  const request_pick = await requestApi(url);
-  const post = request_pick.data;
+  const requestPost = await requestApi(url);
+  const post = requestPost.data;
 
   return post;
 }

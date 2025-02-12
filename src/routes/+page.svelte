@@ -5,8 +5,8 @@
   export let data;
 
   const posts = data.posts;
-  console.log(posts)
 </script>
+
 <div class="container">
   <div class="py-16">
     <h1 class="mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
@@ -27,7 +27,7 @@
               <span class="text-gray-600 font-semibold text-sm">{post.casestudy.business_name.substring(0, 2).toUpperCase()}</span>
             </span>
           {/if}
-          <h2 class="text-lg font-bold">{post.title}</h2>
+          <a href="/casestudy/{post.slug}" class="text-xl font-bold !text-black">{post.title}</a>
         </div>
         <div>
           <p class="text-gray-600 mt-3">{post.excerpt}</p>
