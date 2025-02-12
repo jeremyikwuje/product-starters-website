@@ -9,6 +9,22 @@
   const content = data.content;
 </script>
 
+<svelte:head>
+  <title>{post.post.title} | Product Starters</title>
+  <meta name="description" content="{post.post.excerpt}">
+
+  <!-- Open Graph Meta Tags-->
+  <meta property="og:title" content="{post.post.title} | Product Starters">
+  <meta property="og:description" content="{post.post.excerpt}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://productstarters.com/casestudy/{post.post.slug}">
+  {#if post.post.featured_img}
+    <meta property="og:image" content="{post.post.featured_img}">
+  {:else}
+  <meta property="og:image" content="https://productstarters.com/logo.jpg">
+  {/if}
+</svelte:head>
+
 <div class="container">
   <div class="max-w-3xl mx-auto py-16">
     <!-- Main Header -->
