@@ -7,8 +7,6 @@
 
   const post = data.post;
   const content = data.content;
-
-  console.log(content);
 </script>
 
 <div class="container">
@@ -44,7 +42,7 @@
 
     <!-- Content Section -->
     <article class="mt-8 mx-auto prose lg:prose-xl">
-      {@html content.code}
+      {@html content}
     </article>
   </div>
 </div>
