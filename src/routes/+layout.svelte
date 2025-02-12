@@ -45,7 +45,7 @@
   <nav class="w-full z-100 top-0 left-0 bg-white border-b border-gray-100 dark:bg-gray-900 dark:border-none">
       <div class="container flex flex-wrap items-center justify-between mx-auto p-4">
 				<div class="inline-flex items-center">
-					<a class="flex items-center gap-x-2 mr-6" href="https://productstarters.com/">
+					<a class="flex items-center gap-x-2 mr-6" href="/">
 						<img src="/logo.png" alt="Logo" class="w-8 h-8 rounded-full">
 						<h3 class="text-[#301446] text-lg font-bold md:text-lg">Product Starters</h3>
 					</a>
