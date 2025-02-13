@@ -39,6 +39,49 @@
     };
     collapse();
   });
+
+
+  function toggleEmailListModal() {
+    const modal = document.getElementById('email-list-modal');
+    modal?.classList.toggle('hidden');
+  }
+
+  let listEmail = '';
+  async function addEmailList(screen: string) {
+    const emailInput = document.getElementById('email-list-input') as HTMLInputElement;
+    const button = document.getElementById('add-email-button') as HTMLButtonElement;
+
+    // disbale button
+    button.disabled = true;
+    button.classList.add('opacity-50', 'cursor-not-allowed');
+
+    const response = await fetch('/api/email_subscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: listEmail,
+        utm_source: 'Product Starters',
+        utm_medium: 'website',
+        utm_campaign: screen === 'top-nav-mobile' ? 'top-nav-mobile' : 'top-nav-deskop',
+      }),
+    });
+    const data = await response.json();
+    
+    // clear input
+    emailInput.value = '';
+    button.disabled = false;
+    button.classList.remove('opacity-50', 'cursor-not-allowed');
+
+    if (data.status !== 'success') {
+      alert(data.message);
+      return;
+    }
+
+    toggleEmailListModal();
+    alert("You've been added to the list");
+  }
 </script>
 
 <header class="relative mb-0">
@@ -52,16 +95,15 @@
 
 					<div class="flex items-center space-x-4 hidden md:block">
 						<span class="block border-3 border-solid border-gray-100 rounded-lg pr-2">
-							<input type="email" placeholder="Get new case studies in your inbox" class="p-3 border-0 focus:outline-none focus:ring-0 w-[300px]" />
-							<button class="bg-black text-white text-sm px-5 py-2 rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Yes Please :)</button>
+							<input bind:value={listEmail} id="email-list-input" type="email" placeholder="Get new case studies in your inbox" class="p-3 border-0 focus:outline-none focus:ring-0 w-[300px]" />
+							<button id="add-email-button" onclick={() => addEmailList('top-nav-deskop')} class="bg-black text-white text-sm px-5 py-2 rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Yes Please :)</button>
 						</span>
 					</div>
 				</div>
 
 				<div class="flex md:order-2">
 					<!-- Right Section -->
-					<div class="flex items-center space-x-4">
-					
+					<div class="flex items-center space-x-4 md:hidden" onclick={toggleEmailListModal} onkeyup={toggleEmailListModal} data-modal-target="email-list-modal" data-modal-toggle="email-list-modal" role="button" tabindex="0" aria-controls="email-list-modal" aria-expanded="false" aria-label="Open email list modal">
 						<svg width="30px" height="24px" viewBox="0 0 30 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<title>Group 3 Copy 2</title>
 							<g id="swiped1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -126,3 +168,37 @@
     </div>
   </div>
 </footer>
+
+<!-- Subscribe modal -->
+<div 
+  id="email-list-modal"
+  tabindex="-1"
+  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md mx-auto max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Get new case studies in your inbox
+                </h3>
+                <button onclick={toggleEmailListModal} type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5">
+                <form class="space-y-4" action="#">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+                        <input bind:value={listEmail} type="email" id="email-list-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="" required />
+                    </div>
+                    <button id="add-email-button" onclick={() => addEmailList('top-nav-mobile')} class="w-full bg-black text-white text-sm px-5 py-2 rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Yes, add me!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
