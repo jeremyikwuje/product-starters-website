@@ -30,12 +30,21 @@
     <!-- Main Header -->
     <h1 class="text-4xl font-bold text-gray-800 mb-8">{post.post.title}</h1>
 
+    <!-- Excerpt -->
+    <div class="mb-8 space-x-6 bg-white border-2 border-black rounded-lg p-4">
+      {post.post.excerpt}
+    </div>
+
+
     <!-- Profile Section -->
-    <div class="flex items-center space-x-6 bg-primary rounded-lg p-4">
-        <img src="https://avatar.iran.liara.run/public/30" class="w-24 h-24 rounded-full border-4 border-white" alt="{post.post.casestudy.business_owners[0]} avatar">
+    <div class="flex items-center space-x-6 bg-white border-2 border-gray-100 rounded-lg p-4">
+        <img src="https://ik.imagekit.io/productstarters/casestudies/icons/{post.post.casestudy.business_name_slug}.webp" class="w-24 h-24 rounded-full border-4 border-gray-50" alt="{post.post.casestudy.business_owners[0]} avatar">
         <div>
-            <h2 class="text-xl font-semibold text-white">{post.post.casestudy.business_owners[0]}</h2>
-            <p class="text-white">Founder, {post.post.casestudy.business_name}</p>
+            <h2 class="text-xl font-semibold">{post.post.casestudy.business_name}</h2>
+            <p class="">{post.post.casestudy.website_url}</p>
+            <p class="">
+              Key Figure{post.post.casestudy.business_owners.length > 1 ? 's': ''}: <strong>{post.post.casestudy.business_owners.join(', ')}</strong>
+            </p>
         </div>
     </div>
 
@@ -57,7 +66,7 @@
     </div>
 
     <!-- Content Section -->
-    <article class="mt-8 mx-auto prose lg:prose-xl">
+    <article class="mt-8 mx-auto w-full prose">
       {@html content}
     </article>
   </div>
