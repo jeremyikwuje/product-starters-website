@@ -32,8 +32,8 @@
     <div class="p-5 bg-white rounded-xl shadow-sm border-3 border-gray-100">
       <div class="space-x-4">
         <div class="flex flex-col md:flex-row items-start md:items-center">
-          {#if post.casestudy.business_owner_image}
-            <img src={post.casestudy.business_owner_image} alt="Profile" class="w-10 h-10 rounded-full mr-4 mb-4 md:mb-0">
+          {#if post.casestudy.business_name_slug}
+            <img src=https://ik.imagekit.io/productstarters/casestudies/icons/{post.casestudy.business_name_slug}.webp alt="{post.casestudy.business_name_slug} icon" class="w-10 h-10 rounded-full mr-4 mb-4 md:mb-0">
           {:else}
             <span class="flex items-center w-10 h-10 rounded-full mr-4 mb-4 md:mb-0 bg-gray-200 flex-shrink-0 place-content-center">
               <span class="text-gray-600 font-semibold text-sm">{post.casestudy.business_name.substring(0, 2).toUpperCase()}</span>
