@@ -92,13 +92,6 @@
 						<img src="/logo.png" alt="Logo" class="w-8 h-8 rounded-full">
 						<h3 class="text-[#301446] text-lg font-bold md:text-lg">Product Starters</h3>
 					</a>
-
-					<div class="flex items-center space-x-4 hidden md:block">
-						<span class="block border-3 border-solid border-gray-100 rounded-lg pr-2">
-							<input bind:value={listEmail} id="email-list-input" type="email" placeholder="Get new case studies in your inbox" class="p-3 border-0 focus:outline-none focus:ring-0 w-[300px]" />
-							<button id="add-email-button" onclick={() => addEmailList('top-nav-deskop')} class="bg-black text-white text-sm px-5 py-2 rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Yes Please :)</button>
-						</span>
-					</div>
 				</div>
 
 				<div class="flex md:order-2">
@@ -118,6 +111,13 @@
 									</g>
 							</g>
 						</svg>
+					</div>
+
+          <div class="flex items-center space-x-4 hidden md:block">
+						<span class="block border-3 border-solid border-gray-100 rounded-lg pr-2">
+							<input bind:value={listEmail} id="email-list-input" type="email" placeholder="Get new case studies in your inbox" class="p-3 border-0 focus:outline-none focus:ring-0 w-[300px]" />
+							<button id="add-email-button" onclick={() => addEmailList('top-nav-deskop')} class="bg-black text-white text-sm px-5 py-2 rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Yes Please :)</button>
+						</span>
 					</div>
 
 					<button id="nav-collapse-trigger" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-lg text-gray-800 rounded-lg !hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">

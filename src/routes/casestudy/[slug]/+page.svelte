@@ -10,11 +10,11 @@
 </script>
 
 <svelte:head>
-  <title>{post.post.title} | Product Starters</title>
+  <title>{post.post.casestudy.business_name} Case Study: {post.post.title}</title>
   <meta name="description" content="{post.post.excerpt}">
 
   <!-- Open Graph Meta Tags-->
-  <meta property="og:title" content="{post.post.title} | Product Starters">
+  <meta property="og:title" content="{post.post.casestudy.business_name} Case Study: {post.post.title}">
   <meta property="og:description" content="{post.post.excerpt}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://productstarters.com/casestudy/{post.post.slug}">
@@ -27,11 +27,14 @@
 
 <div class="container">
   <div class="max-w-3xl mx-auto py-16">
+    <!-- Business name -->
+    <span class="block text-center text-xl font-bold mb-8">{post.post.casestudy.business_name} Case Study:</span>
+
     <!-- Main Header -->
-    <h1 class="text-4xl font-bold text-gray-800 mb-8">{post.post.title}</h1>
+    <h1 class="text-center text-4xl font-bold text-gray-800 mb-8">{post.post.title}</h1>
 
     <!-- Excerpt -->
-    <div class="mb-8 space-x-6 bg-white border-2 border-black rounded-lg p-4">
+    <div class="mb-8 space-x-6 bg-white border border-black rounded-sm p-4 italic">
       {post.post.excerpt}
     </div>
 
@@ -66,7 +69,7 @@
     </div>
 
     <!-- Content Section -->
-    <article class="mt-8 mx-auto w-full prose">
+    <article class="mt-12 mx-auto w-full prose">
       {@html content}
     </article>
   </div>
