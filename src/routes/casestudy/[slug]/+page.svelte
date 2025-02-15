@@ -28,10 +28,10 @@
 <div class="container">
   <div class="max-w-3xl mx-auto py-16">
     <!-- Business name -->
-    <span class="block text-center text-xl font-bold mb-8">{post.post.casestudy.business_name} Case Study:</span>
+    <span class="block text-center text-lg md:text-xl font-bold mb-8">{post.post.casestudy.business_name} Case Study:</span>
 
     <!-- Main Header -->
-    <h1 class="text-center text-4xl font-bold text-gray-800 mb-8">{post.post.title}</h1>
+    <h1 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-8">{post.post.title}</h1>
 
     <!-- Excerpt -->
     <div class="mb-8 space-x-6 bg-white border border-black rounded-sm p-4 italic">
@@ -40,10 +40,10 @@
 
 
     <!-- Profile Section -->
-    <div class="flex items-center space-x-6 bg-white border-2 border-gray-100 rounded-lg p-4">
-        <img src="https://ik.imagekit.io/productstarters/casestudies/icons/{post.post.casestudy.business_name_slug}.webp" class="w-24 h-24 rounded-full border-4 border-gray-50" alt="{post.post.casestudy.business_owners[0]} avatar">
+    <div class="flex items-center space-x-6 bg-white border-2 border-gray-100 rounded-lg p-4 text-sm md:tex-lg">
+        <img src="https://ik.imagekit.io/productstarters/casestudies/icons/{post.post.casestudy.business_name_slug}.webp" class="w-16 h-16 md:w-24 md:h-24 rounded-full border-4 border-gray-50" alt="{post.post.casestudy.business_owners[0]} avatar">
         <div>
-            <h2 class="text-xl font-semibold">{post.post.casestudy.business_name}</h2>
+            <h2 class="text-lg md:text-xl font-semibold">{post.post.casestudy.business_name}</h2>
             <p class="">{post.post.casestudy.website_url}</p>
             <p class="">
               Key Figure{post.post.casestudy.business_owners.length > 1 ? 's': ''}: <strong>{post.post.casestudy.business_owners.join(', ')}</strong>
