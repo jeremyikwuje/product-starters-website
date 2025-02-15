@@ -61,11 +61,7 @@
           <span class="text-3xl font-bold">${formatNumber(post.post.casestudy.startup_cost)}</span>
           <span>STARTUP COST</span>
       </div>
-        <div class="flex space-x-4 ">
-            <span class="text-xl">{post.post.casestudy.business_owners.length}</span>
-            <span class="text-xl">FOUNDERS</span>
-        </div>
-        <div class="flex space-x-4">
+      <div class="flex space-x-4">
           <span class="text-xl">{formatTeamSize(post.post.casestudy.employees_size)}</span>
           <span class="text-xl">EMPLOYEES</span>
       </div>
