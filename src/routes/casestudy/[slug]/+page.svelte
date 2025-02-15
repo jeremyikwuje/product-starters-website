@@ -53,13 +53,13 @@
 
     <!-- Info Section -->
     <div class="mt-8 border-2 border-gray-100 text-black p-4 rounded-lg flex flex-col md:flex-row justify-between items-startmd:items-center">
-        <div class="flex items-center space-x-4 border-b border-gray-100 md:border-b-0 pb-4 md:pb-0 mb-4 md:mb-0">
-            <span class="text-3xl font-bold">${formatNumber(post.post.casestudy.revenue)}</span>
-            <span>REVENUE/{getIntervalAbbreviation(post.post.casestudy.revenue_interval).toUpperCase()}</span>
-        </div>
-        <div class="flex items-center space-x-4 border-b border-gray-100 md:border-b-0 pb-4 md:pb-0 mb-4 md:mb-0">
-          <span class="text-3xl font-bold">${formatNumber(post.post.casestudy.startup_cost)}</span>
-          <span>STARTUP COST</span>
+      <div class="flex items-center space-x-4 border-b border-gray-100 md:border-b-0 pb-4 md:pb-0 mb-4 md:mb-0">
+          <span class="text-3xl font-bold">${formatNumber(post.post.casestudy.revenue)}</span>
+          <span>REVENUE/{getIntervalAbbreviation(post.post.casestudy.revenue_interval).toUpperCase()}</span>
+      </div>
+      <div class="flex items-center space-x-4 border-b border-gray-100 md:border-b-0 pb-4 md:pb-0 mb-4 md:mb-0">
+        <span class="text-3xl font-bold">${formatNumber(post.post.casestudy.startup_cost)}</span>
+        <span>STARTUP COST</span>
       </div>
       <div class="flex space-x-4">
           <span class="text-xl">{formatTeamSize(post.post.casestudy.employees_size)}</span>

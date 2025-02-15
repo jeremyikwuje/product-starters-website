@@ -28,13 +28,17 @@ export async function requestApi(endpoint: string, method: string = RequestMetho
 		}
 
 		const res = await fetch(url, options);
+		if (!res.ok) {
+			throw new Error(res.statusText);
+		}
+
 		const json = await res.json();
 
 		return json;
-	} catch (error: any) {
-		console.error(error);
+	} catch (e: any) {
+
 		return {
-			error,
+			error: e.message || e,
 		}
 	}
 }

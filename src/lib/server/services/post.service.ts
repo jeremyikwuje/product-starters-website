@@ -12,6 +12,11 @@ export const getPosts = async (type: PostType) => {
 export const getPost = async (postUnique: string) => {
   const url = `/posts/get_post?post_unique=${postUnique}`;
   const requestPost = await requestApi(url);
+  if (requestPost.error) {
+    console.error(requestPost.error);
+    return null;
+  }
+
   const post = requestPost.data;
 
   return post;
