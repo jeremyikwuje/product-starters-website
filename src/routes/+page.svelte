@@ -29,7 +29,7 @@
 
   <div class="case-studies">
     {#each posts as post}
-    <div class="p-5 bg-white rounded-xl shadow-sm border-3 border-gray-100">
+    <div class="p-5 bg-white rounded-xl shadow-sm border-3 border-gray-100 mb-8">
       <div class="space-x-4">
         <div class="flex flex-col md:flex-row items-start md:items-center">
           {#if post.casestudy.business_name_slug}
