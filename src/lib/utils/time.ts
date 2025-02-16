@@ -22,7 +22,11 @@ export const format = (dt: any, d = 'datetime') => {
 
 export const formatDate = (dateString: any) => {
 	const dt = new Date(dateString);
-	return date.format(dt, 'ddd, MMM DD YYYY');
+	const day = dt.getDate();
+  const month = dt.toLocaleString('default', { month: 'short' });
+  const year = dt.getFullYear();
+  const currentYear = new Date().getFullYear();
+  return year === currentYear ? `${day} ${month}` : `${day} ${month}, ${year}`
 };
 
 export function friendlyDate(dt: any, d = 'datetime') {
