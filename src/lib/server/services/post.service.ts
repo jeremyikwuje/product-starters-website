@@ -2,7 +2,7 @@ import { PostVisibilty, type PostType } from "$lib/constant";
 import { requestApi } from "$lib/utils/utilities";
 
 export const getPosts = async (type: PostType) => {
-  const url = `/posts/get_posts?post_type=${type}&visibility=${PostVisibilty.public}&is_published=false`;
+  const url = `/posts/get_posts?post_type=${type}&visibility=${PostVisibilty.public}&is_published=true`;
   const requestPosts = await requestApi(url);
   const posts = requestPosts.data;
 
