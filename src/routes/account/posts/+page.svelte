@@ -36,6 +36,10 @@
 </script>
 
 <div class="w-full container mx-auto p-6 overflow-x-auto">
+  <div class="flex items-center justify-end">
+    <a href="/account/posts/new" class="btn-black">Create Post</a>
+
+  </div>
   <!-- Tabs -->
   <div class="flex space-x-4">
       <button id="publishedTab" onclick={togglePublished} onkeydown={togglePublished} class="tab-button active">Published</button>

@@ -70,3 +70,29 @@ a {
     @apply bg-orange-400 text-gray-50 text-xs font-medium px-2 py-1 rounded-full;
   }
 }
+
+@layer components {
+  .btn-default {
+    @apply transition ease-in-out duration-150 text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-75 font-medium rounded text-sm px-4 py-2.5
+  }
+
+  .btn {
+    @apply disabled:opacity-75 font-medium rounded text-sm px-4 py-2.5 cursor-pointer;
+  }
+
+  .btn-black {
+    @apply transition ease-in-out cursor-pointer duration-150 !text-white bg-neutral-900 hover:bg-neutral-800 focus:outline-none disabled:opacity-75 disabled:cursor-not-allowed font-medium rounded-md text-sm px-4 py-2.5
+  }
+
+  .form-control {
+      @apply bg-gray-50 border border-gray-300 hover:border-gray-400 text-gray-900 text-sm rounded outline-none focus:border-blue-500 block w-full p-2.5
+  }
+
+  .form-select {
+      @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded outline-none focus:border-blue-500 block w-full
+  }
+
+  .page-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+}
