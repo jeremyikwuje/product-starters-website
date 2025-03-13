@@ -18,7 +18,7 @@
   <meta property="og:description" content="{post.post.excerpt}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://productstarters.com/casestudy/{post.post.slug}">
-  {#if post.post.featured_img}
+  {#if post.post.featured_image}
     <meta property="og:image" content="https://ik.imagekit.io/productstarters/casestudies/featured/{post.post.featured_img}.webp">
   {:else}
   <meta property="og:image" content="https://productstarters.com/logo.jpg">
